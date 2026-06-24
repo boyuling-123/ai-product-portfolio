@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 测评平台 - 案例详情</title>
+  <style>
+    :root { --bg:#fafafa; --surface:#fff; --ink:#0a0a0a; --muted:#667085; --line:#e2e6ee; --accent:#2563eb; --soft:#f4f7fb; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.7; }
+    main { max-width:960px; margin:0 auto; padding:42px 24px 70px; }
+    a { color:var(--accent); font-weight:800; }
+    .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:10px; box-shadow:0 18px 48px rgba(15,23,42,.08); }
+    .hero { padding:30px; }
+    .card { padding:18px; margin-top:16px; }
+    img { width:100%; border:1px solid var(--line); border-radius:8px; background:var(--soft); }
+    .caption { margin:8px 0 0; color:var(--muted); font-size:13px; }
+    .shots { display:grid; grid-template-columns:1fr; gap:14px; margin-top:12px; }
+    h1 { margin:8px 0 12px; font-size:42px; line-height:1.1; }
+    h2 { margin:30px 0 10px; font-size:24px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .muted { color:var(--muted); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+    .tag { padding:3px 9px; border-radius:999px; background:#edf4ff; color:var(--accent); font-size:12px; font-weight:850; }
+    li { margin:6px 0; }
+    @media (max-width:800px){ h1{font-size:34px;} }
+  </style>
+  <link rel="stylesheet" href="../assets/highlights.css">
+</head>
+<body>
+  <main>
+    <a href="../pages/tools.html">返回自驱工具</a>
+    <section class="hero">
+      <p class="eyebrow">Case Study</p>
+      <h1>AI 测评平台</h1>
+      <p class="muted">把测试集、模型接口、批量运行、AI 评价、人工复核和 bad-case 回流整合到一个本地平台。</p>
+      <div class="tags"><span class="tag">评测平台</span><span class="tag">本地 Demo</span><span class="tag">真实截图</span></div>
+      <p><a href="http://127.0.0.1:3000/">打开本地 Demo</a></p>
+    </section>
+    <section class="card">
+      <div class="shots">
+        <figure>
+          <img src="../assets/screenshots/eval-platform-home.png" alt="AI 测评平台首页截图">
+          <figcaption class="caption">平台首页：项目、导入、模型选择和评价链路入口。</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/evidence/handwritten/eval-platform-01.png" alt="AI 测评平台批量造数界面截图">
+          <figcaption class="caption">AI 造数与批量数据生成界面，可作为跑批前的数据构造链路展示。</figcaption>
+        </figure>
+      </div>
+      <h2>结构化能力</h2>
+      <ul>
+        <li>测试集与标准答案管理。</li>
+        <li>模型接口配置和批量跑批。</li>
+        <li>AI 评价、人工复核和结果对比。</li>
+        <li>bad-case 回流与后续优化。</li>
+      </ul>
+      <p class="muted">当前新增了批量造数界面截图；AI 评分结果、人工复核页和 bad-case 回流页面仍是后续最该补的素材。</p>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

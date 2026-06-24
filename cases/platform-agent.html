@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>悟空 MCP 对接 - 案例详情</title>
+  <style>
+    :root{--bg:#fafafa;--surface:#fff;--ink:#0a0a0a;--muted:#667085;--line:#e2e6ee;--accent:#2563eb;--soft:#f4f7fb;--green:#087f5b;--amber:#b45309;--shadow:0 18px 48px rgba(15,23,42,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}main{max-width:1040px;margin:0 auto;padding:42px 24px 70px}a{color:var(--accent);font-weight:800}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:30px}.card{padding:20px;margin-top:16px}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:42px;line-height:1.1;margin:8px 0 12px}h2{margin:24px 0 10px}.muted{color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{padding:3px 9px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.tag.green{background:#ecfdf3;color:var(--green)}.tag.amber{background:#fffbeb;color:var(--amber)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.mini h3{margin:0 0 6px;font-size:16px}.mini p{margin:0;color:#344054}.stack{display:grid;gap:10px}.layer{padding:14px;border:1px solid var(--line);border-radius:8px;background:#fff}.layer strong{display:block;color:#0f172a}.layer span{color:var(--muted);font-size:14px}li{margin:6px 0}@media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+  </style>
+  <link rel="stylesheet" href="../assets/highlights.css">
+</head>
+<body>
+  <main>
+    <a href="../pages/business.html">返回业务项目</a>
+    <section class="hero">
+      <p class="eyebrow">Business Case</p>
+      <h1>悟空 MCP 对接</h1>
+      <p class="muted">围绕业务 Agent 如何接入超编 / 悟空类平台，梳理 API、MCP、Skill、ComfyCloud 工作流、Oneday Agent 和 LangGraph 子 Agent 的能力边界，让业务能力能被平台调用、管理、观察和复用。</p>
+      <div class="tags"><span class="tag green">MCP / Skill</span><span class="tag">Agent 平台接入</span><span class="tag amber">能力网关</span></div>
+    </section>
+    <section class="card">
+      <h2>项目描述</h2>
+      <p>平台对接的核心不是把某个接口“接通”，而是定义业务垂直场景 Agent 如何进入平台生态：哪些能力作为 Tool，哪些能力作为子 Agent，哪些能力沉淀为 Skill，过程数据如何透出，结果如何回写，失败时如何兜底。</p>
+      <div class="stack">
+        <div class="layer"><strong>能力层</strong><span>外部 API、内部 API、ComfyCloud 工作流 API、Oneday Agent API、LangGraph 子 Agent。</span></div>
+        <div class="layer"><strong>平台层</strong><span>MCP / Tool Schema、业务身份、资源分配、流量管控、任务监控、日志和错误码。</span></div>
+        <div class="layer"><strong>业务层</strong><span>垂直场景 Agent、灵动岛对话框、业务定制组件、画布结果编辑和业务系统回传。</span></div>
+      </div>
+      <h2>需求与设计</h2>
+      <ul>
+        <li>梳理 API、MCP、Skill、Workflow、Agent 的能力层级：简单能力以 Tool 形式接入，复杂链路以 Skill / 子 Agent 形式承接。</li>
+        <li>定义接入平台的标准信息：能力名称、使用场景、输入参数、输出协议、调用方式、权限边界、状态事件和错误处理。</li>
+        <li>区分 Oneday Agent 与 LangGraph 子 Agent 的适用边界：前者适合快速搭建和 API 化调用，后者适合复杂工作流、自主可控和过程交互。</li>
+        <li>规划平台网关能力：业务身份管理、资源分配、流量管控、任务监控、日志追踪和失败兜底，避免能力散落在各业务侧。</li>
+      </ul>
+      <h2>技术与执行</h2>
+      <div class="grid">
+        <article class="mini"><h3>Tool Schema</h3><p>整理每个能力的入参出参、必填字段、枚举值、默认值、返回结构和错误码。</p></article>
+        <article class="mini"><h3>过程输出</h3><p>明确 Agent 执行过程中的状态事件、卡片渲染、流式输出和用户确认节点。</p></article>
+        <article class="mini"><h3>业务定制</h3><p>区分平台通用交互与业务定制逻辑，支持会员、扣费、素材库、业务内容中心等能力接入。</p></article>
+        <article class="mini"><h3>验收清单</h3><p>沉淀成功样例、失败样例、日志字段、重试口径和人工兜底标准，便于跨团队联调。</p></article>
+      </div>
+      <h2>项目管理与优化</h2>
+      <ul>
+        <li>把“能力能不能调通”上升为“能力能不能被平台稳定管理和复用”，推动能力接入标准化。</li>
+        <li>协同产品、研发、设计和业务侧确认接入范围、交互边界、排期和验收标准。</li>
+        <li>为后续视频生成 Skill、PRD Skill、买点图生成、模特图生成、详情页生成等能力接入提供统一口径。</li>
+      </ul>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+2026-06-23T23:10:00+08:00 | D001 | /portfolio did not exist, so use /Users/lu/Documents/skill与prd/portfolio as canonical working directory.
+2026-06-23T23:10:00+08:00 | D002 | /source did not exist, so map existing PRD/skills/projects from /Users/lu/Documents/skill与prd/PRD与Skill知识库 and the provided desktop paths.
+2026-06-23T23:10:00+08:00 | D003 | Do not use speculative SVG diagrams as project evidence. Use real screenshots only; uncertain visuals become empty evidence slots and are listed in needs-input.md.
+2026-06-23T23:10:00+08:00 | D004 | Keep Chinese as primary language and use a restrained Linear/Apple style with black text, off-white background, and blue accent.
+2026-06-23T23:10:00+08:00 | D005 | Treat external or official skills as maintained capability assets, not original authored work.

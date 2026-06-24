@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FreeSignal - 案例详情</title>
+  <style>
+    :root { --bg:#fafafa; --surface:#fff; --ink:#0a0a0a; --muted:#667085; --line:#e2e6ee; --accent:#2563eb; --soft:#f4f7fb; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.7; }
+    main { max-width:1040px; margin:0 auto; padding:42px 24px 70px; }
+    a { color:var(--accent); font-weight:800; }
+    .hero,.card { background:var(--surface); border:1px solid var(--line); border-radius:10px; box-shadow:0 18px 48px rgba(15,23,42,.08); }
+    .hero { padding:30px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:16px; }
+    .card { padding:18px; }
+    img { width:100%; border:1px solid var(--line); border-radius:8px; background:var(--soft); }
+    .wide { grid-column:1/-1; }
+    h1 { margin:8px 0 12px; font-size:42px; line-height:1.1; }
+    h2 { margin:34px 0 12px; font-size:24px; }
+    .eyebrow { color:var(--accent); font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .muted { color:var(--muted); }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+    .tag { padding:3px 9px; border-radius:999px; background:#edf4ff; color:var(--accent); font-size:12px; font-weight:850; }
+    @media (max-width:800px){ .grid{grid-template-columns:1fr;} h1{font-size:34px;} }
+  </style>
+  <link rel="stylesheet" href="../assets/highlights.css">
+</head>
+<body>
+  <main>
+    <a href="../pages/tools.html">返回自驱工具</a>
+    <section class="hero">
+      <p class="eyebrow">Case Study</p>
+      <h1>FreeSignal</h1>
+      <p class="muted">一个面向信息来源诊断、维度生成、信号发现、摘要整理和每日邮件推送的 C 端 HTML 信息产品。</p>
+      <div class="tags"><span class="tag">信息产品</span><span class="tag">本地 Demo</span><span class="tag">真实截图</span></div>
+      <p><a href="http://127.0.0.1:8006/public/index.html">打开本地 Demo</a></p>
+    </section>
+    <h2>可验证截图</h2>
+    <div class="grid">
+      <article class="card wide"><img src="../assets/evidence/handwritten/freesignal-01.png" alt="FreeSignal 用户流程图"><p class="muted">用户从研究目标、来源接入、维度拆解到每日信息流的完整流程。</p></article>
+      <article class="card"><img src="../assets/screenshots/freesignal-home.png" alt="FreeSignal 首页"><p class="muted">首页与来源诊断入口。</p></article>
+      <article class="card"><img src="../assets/screenshots/freesignal-dimensions.png" alt="FreeSignal 维度生成"><p class="muted">从来源生成可追踪维度。</p></article>
+      <article class="card"><img src="../assets/screenshots/freesignal-digest.png" alt="FreeSignal 摘要"><p class="muted">信号摘要和每日推送结构。</p></article>
+    </div>
+    <h2>产品价值</h2>
+    <p class="muted">FreeSignal 体现的是从个人信息需求出发，把散乱来源转成可运营信号流的能力。当前展示仅使用本机真实截图，不额外编造用户数据。</p>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

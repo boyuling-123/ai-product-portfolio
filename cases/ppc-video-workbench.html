@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPC 视频生成工作台 - 案例详情</title>
+  <style>
+    :root{--bg:#fafafa;--surface:#fff;--ink:#0a0a0a;--muted:#667085;--line:#e2e6ee;--accent:#2563eb;--soft:#f4f7fb;--green:#087f5b;--amber:#b45309;--shadow:0 18px 48px rgba(15,23,42,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}main{max-width:1040px;margin:0 auto;padding:42px 24px 70px}a{color:var(--accent);font-weight:800}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:30px}.card{padding:20px;margin-top:16px}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:42px;line-height:1.1;margin:8px 0 12px}h2{margin:24px 0 10px}.muted{color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{padding:3px 9px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.tag.green{background:#ecfdf3;color:var(--green)}.tag.amber{background:#fffbeb;color:var(--amber)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.mini h3{margin:0 0 6px;font-size:16px}.mini p{margin:0;color:#344054}.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}.step{padding:14px;border:1px solid var(--line);border-radius:8px;background:#fff}.step strong{display:block;color:#0f172a}.step span{color:var(--muted);font-size:13px}li{margin:6px 0}@media(max-width:900px){.grid,.flow{grid-template-columns:1fr}h1{font-size:34px}}
+  </style>
+  <link rel="stylesheet" href="../assets/highlights.css">
+</head>
+<body>
+  <main>
+    <a href="../pages/business.html">返回业务项目</a>
+    <section class="hero">
+      <p class="eyebrow">Business Case</p>
+      <h1>PPC 视频生成工作台</h1>
+      <p class="muted">面向商品短视频生产，把商品信息、脚本、分镜、分镜图、视频片段、剪辑合成、保存导出串成一个 Agent 可生成、用户可干预、结果可沉淀的工作台。</p>
+      <div class="tags"><span class="tag green">AI 视频</span><span class="tag">脚本 / 分镜 / 视频片段</span><span class="tag amber">可编辑工作台</span></div>
+    </section>
+    <section class="card">
+      <h2>主链路</h2>
+      <div class="flow">
+        <div class="step"><strong>商品输入</strong><span>商品图、链接、语言、类型、渠道尺寸</span></div>
+        <div class="step"><strong>脚本生成</strong><span>视频概览、卖点、分镜描述、VO 旁白</span></div>
+        <div class="step"><strong>分镜画布</strong><span>分镜参考图、生成模式、结果选择</span></div>
+        <div class="step"><strong>视频片段</strong><span>画面描述、时长、生成结果、高清处理</span></div>
+        <div class="step"><strong>剪辑导出</strong><span>合成、字幕、配音、素材库、保存下载</span></div>
+      </div>
+      <h2>项目描述</h2>
+      <p>PPC 视频生成工作台解决的是“AI 能生成视频，但业务生产过程不可控”的问题。方案把一次性对话生成拆为多个可编辑模块，让用户能在脚本、分镜、视频片段和剪辑环节介入，并让过程数据进入项目和资产体系。</p>
+      <h2>需求与设计</h2>
+      <ul>
+        <li>入口与入参：定义商品图片、商品链接、目标语言、视频类型、投放渠道及尺寸等字段，支持进入 Agent 后自动唤起固定任务消息并返回前端组件。</li>
+        <li>脚本环节：设计视频概览、分镜描述、VO 旁白等模块，并支持编辑、重新生成、双语辅助和适配视频时长翻译。</li>
+        <li>分镜环节：设计未生成 / 已生成分镜状态，支持分镜参考图、首帧参考、首尾帧参考、多图参考、重新生成、局部修改、替换、复制和删除。</li>
+        <li>视频环节：设计视频描述、生成视频片段、生成时长、结果选择、全屏预览、重新生成、编辑描述、替换、清空和高清入口。</li>
+        <li>全局动作：定义批量生成分镜、批量生成视频片段、预览、进入剪辑的可交互条件与二次确认逻辑。</li>
+      </ul>
+      <h2>技术与执行</h2>
+      <div class="grid">
+        <article class="mini"><h3>模块关系</h3><p>梳理分镜、VO、视频描述之间的绑定关系，明确移动、复制、删除时是否连带旁白或视频结果。</p></article>
+        <article class="mini"><h3>数据保存</h3><p>将对话上下文、图片、视频保存至项目；将剪辑结果、字幕、配音和导出结果沉淀到资产。</p></article>
+        <article class="mini"><h3>剪辑 iframe</h3><p>梳理剪辑合成、字幕生成、旁白配音、素材管理、自动保存、导出下载等编辑器能力。</p></article>
+        <article class="mini"><h3>异常处理</h3><p>为生成中状态、失败重跑、刷新后任务更新、清空与重新生成等场景预留交互和状态口径。</p></article>
+      </div>
+      <h2>项目管理与优化</h2>
+      <ul>
+        <li>将复杂视频生成拆成脚本、分镜、视频片段、剪辑导出四类核心对象，降低用户理解和研发实现成本。</li>
+        <li>把 Agent 自动生成与人工修订放在同一条链路中，避免生成结果不可编辑、不可复用。</li>
+        <li>在 PRD 中细化移动、复制、删除、合并、拆分等高频编辑动作，减少研发实现中的状态歧义。</li>
+      </ul>
+      <p><a href="../prds/ppc-video-workbench.html">查看脱敏 PRD 摘要</a></p>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

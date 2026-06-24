@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent 建设 - 案例详情</title>
+  <style>
+    :root{--bg:#fafafa;--surface:#fff;--ink:#0a0a0a;--muted:#667085;--line:#e2e6ee;--accent:#2563eb;--soft:#f4f7fb;--green:#087f5b;--amber:#b45309;--shadow:0 18px 48px rgba(15,23,42,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}main{max-width:1040px;margin:0 auto;padding:42px 24px 70px}a{color:var(--accent);font-weight:800}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:30px}.card{padding:20px;margin-top:16px}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:42px;line-height:1.1;margin:8px 0 12px}h2{margin:24px 0 10px}.muted{color:var(--muted)}img{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.caption{margin:8px 0 0;color:var(--muted);font-size:13px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{padding:3px 9px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.tag.green{background:#ecfdf3;color:var(--green)}.tag.amber{background:#fffbeb;color:var(--amber)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini-card{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.mini-card h3{margin:0 0 6px;font-size:16px}.mini-card p{margin:0;color:var(--muted)}li{margin:6px 0}@media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+  </style>
+  <link rel="stylesheet" href="../assets/highlights.css">
+</head>
+<body>
+  <main>
+    <a href="../pages/business.html">返回业务项目</a>
+    <section class="hero">
+      <p class="eyebrow">Business Case</p>
+      <h1>堆友 Agent 建设</h1>
+      <p class="muted">面向 AI 设计场景，参与堆友多 Agent 架构建设与图像生成编辑 Agent 方案设计，把图像生成、图像编辑、文本处理、任务规划、状态记忆和结果总结拆成可独立迭代的 Agent / Tool 组。</p>
+      <div class="tags"><span class="tag green">Multi-Agent</span><span class="tag">图像生成/编辑</span><span class="tag amber">Human-in-loop</span></div>
+    </section>
+    <section class="card">
+      <figure>
+        <img src="../assets/evidence/handwritten/duiyou-agent-architecture.jpg" alt="堆友 Agent 多 Agent 架构图">
+        <figcaption class="caption">架构草图：mainSupervisor 做任务完整性检查和路由，imageSupervisor 分发图像生成/编辑任务，TextProcess 处理文本编辑、翻译、扩写、总结等能力。</figcaption>
+      </figure>
+      <h2>项目描述</h2>
+      <p>项目目标是提升 Agent 对复杂设计任务的理解、拆解、执行和复盘能力，支持多轮交互、上下文记忆、用户问询、模型路由、图像生成与编辑等能力。我的工作重点是把混在单一 Agent 里的能力拆成上层调度、图像任务、文本任务和底层 Tool，并明确每个节点的输入输出、路由条件和异常处理方式。</p>
+      <h2>需求与设计</h2>
+      <ul>
+        <li>设计 mainSupervisor 作为上层调度节点，负责用户意图理解、任务规划、完整性检查、任务路由和结果汇总。</li>
+        <li>设计 imageSupervisor 负责图像任务判断与分发，根据用户 prompt、图片列表和任务意图选择 IMAGE_GEN、IMAGE_EDIT 或结束流程。</li>
+        <li>设计 TextProcess 文本处理节点，抽象 EDIT、TRANSLATION、EXPANSION、SUMMARIZATION 等操作，支持文本修改、翻译、扩写和总结。</li>
+        <li>设计 state 记忆结构，沉淀 userInput、taskStatusList、mainInstruction、imageInstruction、mainSummary、图片列表、任务状态和异常信息。</li>
+        <li>针对用户输入不完整、意图不清晰或关键参数缺失的情况，设计 human-in-loop 问询节点，让 Agent 在执行前主动追问补充信息。</li>
+      </ul>
+      <h2>技术与执行</h2>
+      <div class="grid">
+        <article class="mini-card"><h3>图像生成链路</h3><p>梳理文生图、单图生图、二维码生成、Nano Banana 生成等能力的参数要求与路由边界。</p></article>
+        <article class="mini-card"><h3>图像编辑链路</h3><p>梳理 userPrompt、imageUrl、width、height 等参数，并用 reason 字段记录模型选择原因。</p></article>
+        <article class="mini-card"><h3>模型与 Tool 接入</h3><p>接入即梦、Qwen Image、Nano Banana、二维码生成、即梦编辑、Qwen Image Edit 等能力。</p></article>
+        <article class="mini-card"><h3>可观测与复盘</h3><p>通过任务状态、节点结果、用户问询和模型选择原因，让 Agent 从黑盒调用变成可观察流程。</p></article>
+      </div>
+      <h2>项目管理与优化</h2>
+      <ul>
+        <li>推动 Agent 从“单一对话 + 工具调用”升级为“任务规划 + 多 Agent 协作 + 状态记忆 + 工具路由 + 用户问询”的结构化工作流。</li>
+        <li>通过拆分 supervisor、imageSupervisor、TextProcess 和底层工具组，降低复杂设计任务的耦合度，使图像生成、图像编辑、文本处理、结果总结等能力能够独立迭代。</li>
+        <li>结合模型评测知识库和不同模型擅长领域，探索在同一功能下接入多个生成/编辑模型，并根据任务类型和评测结果进行模型选择。</li>
+        <li>为后续模型路由、bad-case 回流和 Agent 效果优化打基础，也能反哺 AI 测评平台的评估维度与样本沉淀。</li>
+      </ul>
+      <p><a href="../prds/agent-product-framework.html">查看 Agent 框架摘要</a></p>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

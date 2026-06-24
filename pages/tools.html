@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自驱工具 - AI 作品集</title>
+  <style>
+    :root{--bg:#fafafa;--surface:#fff;--ink:#0a0a0a;--muted:#667085;--line:#e2e6ee;--accent:#2563eb;--soft:#f4f7fb;--accent-soft:#edf4ff;--shadow:0 18px 48px rgba(15,23,42,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}a{color:inherit}.nav{position:sticky;top:0;background:rgba(250,250,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);z-index:10}.nav-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:16px}.nav a{padding:7px 10px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:13px;font-weight:800}.nav a:hover{background:var(--accent-soft);color:var(--accent)}main{max-width:1180px;margin:0 auto;padding:34px 24px 76px}.hero,.tool{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:34px;margin-bottom:18px}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:52px;line-height:1.05;margin:8px 0 14px}h2{font-size:34px;line-height:1.08;margin:0}.muted{color:var(--muted)}.stack{display:grid;gap:16px}.tool{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:24px;min-height:260px;padding:28px}.tool::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(37,99,235,.09),rgba(255,255,255,0) 42%);pointer-events:none}.tool>*{position:relative}.kicker{display:inline-flex;width:max-content;margin-bottom:14px;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:900}.claim{margin-top:16px;color:#263142;font-size:18px;font-weight:760}.big{display:block;margin-top:8px;color:#0f172a;font-size:64px;line-height:.95;font-weight:950;letter-spacing:0}.detail{display:grid;align-content:space-between;gap:18px}.points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}.points li{min-height:82px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--soft);color:#344054;font-size:14px;font-weight:760}.actions{display:flex;flex-wrap:wrap;gap:9px}.button{display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:8px 14px;border:1px solid var(--line);border-radius:9px;background:#fff;text-decoration:none;color:#344054;font-size:13px;font-weight:850}.primary{background:var(--accent);border-color:var(--accent);color:#fff}.tag{display:inline-flex;margin:0 6px 8px 0;padding:3px 9px;border-radius:999px;background:#e9f7ef;color:#168a52;font-size:12px;font-weight:850}.amber{background:#fff5db;color:#a15c07}@media(max-width:900px){.tool{grid-template-columns:1fr;min-height:auto}.points{grid-template-columns:1fr}.nav-inner{flex-direction:column}.big{font-size:46px}h1{font-size:38px}h2{font-size:30px}}
+  </style>
+</head>
+<body>
+  <header class="nav"><div class="nav-inner"><strong>Lu · AI 作品集</strong><nav><a href="../index.html">首页</a><a href="tools.html">自驱工具</a><a href="skills.html">Skill</a><a href="business.html">业务项目</a><a href="about.html">关于我</a></nav></div></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Self-Driven Tools</p>
+      <h1>自驱工具</h1>
+      <p class="muted">这一页只放我自己推动出来、能看出产品判断和执行痕迹的工具。每个模块都先说清楚“它解决什么问题，我具体做了什么”。</p>
+    </section>
+
+    <section class="stack">
+      <article class="tool">
+        <div><span class="kicker">评测基础设施</span><h2>AI 测评平台</h2><span class="big">Eval OS</span><p class="claim">把测试集、模型、跑批、AI 评分和 bad-case 回流做成一个可运行的平台。</p></div>
+        <div class="detail"><ul class="points"><li>设计测试集导入、AI 造数和批量跑批链路。</li><li>把模型输出、标准答案和 AI 评分放到同一张工作台里。</li><li>为人工复核和 bad-case 回流预留闭环。</li></ul><div><span class="tag">可演示</span><span class="tag">本地平台</span><div class="actions"><a class="button primary" href="http://127.0.0.1:3000/">Demo</a><a class="button" href="../cases/eval-platform.html">案例详情</a></div></div></div>
+      </article>
+
+      <article class="tool">
+        <div><span class="kicker">Prompt 资产化</span><h2>Prompt 管理平台</h2><span class="big">Prompt Hub</span><p class="claim">把散落在对话里的 Prompt 变成可搜索、可版本化、可共享的工作资产。</p></div>
+        <div class="detail"><ul class="points"><li>设计 Prompt 列表、分类、版本号和编辑入口。</li><li>沉淀共享状态、标签和操作日志的管理口径。</li><li>预留与测评平台联动的评估路径。</li></ul><div><span class="tag">真实截图</span><span class="tag amber">待补 Demo</span><div class="actions"><a class="button" href="../cases/prompt-manager.html">案例详情</a></div></div></div>
+      </article>
+
+      <article class="tool">
+        <div><span class="kicker">个人信息产品</span><h2>FreeSignal</h2><span class="big">Signal Flow</span><p class="claim">不是资讯站，而是把“我想研究什么”变成每天自动送来的可评分信息流。</p></div>
+        <div class="detail"><ul class="points"><li>拆出研究目标、信息来源、筛选维度和每日摘要。</li><li>设计来源诊断和维度生成，让信息流可运营。</li><li>用 HTML 项目承载完整 C 端产品体验。</li></ul><div><span class="tag">个人产品</span><span class="tag">可演示</span><div class="actions"><a class="button primary" href="http://127.0.0.1:8006/public/index.html">Demo</a><a class="button" href="../cases/freesignal.html">案例详情</a></div></div></div>
+      </article>
+
+      <article class="tool">
+        <div><span class="kicker">Skill 执行可视化</span><h2>Skill 可视化</h2><span class="big">Runtime Map</span><p class="claim">只用 HTML 和 Claude Code 提示词，把 Skill 的节点、日志和结果可视化出来。</p></div>
+        <div class="detail"><ul class="points"><li>设计节点图、运行观察器和终端联动逻辑。</li><li>让原本黑盒的 Skill 执行过程变成可解释路径。</li><li>支持查看文件、节点状态、失败事件和输出结果。</li></ul><div><span class="tag">可演示</span><span class="tag">真实截图</span><div class="actions"><a class="button primary" href="http://127.0.0.1:4173/">Demo</a><a class="button" href="../cases/skill-visualizer.html">案例详情</a></div></div></div>
+      </article>
+
+      <article class="tool">
+        <div><span class="kicker">写作风格知识库</span><h2>去 AI 味口喷 Wiki</h2><span class="big">Human Voice</span><p class="claim">专门收集我的口喷表达、自然语气和反 AI 味规则，用来把输出改得像人话。</p></div>
+        <div class="detail"><ul class="points"><li>沉淀个人表达偏好、句式和常见 AI 味问题。</li><li>把“太像机器写的”拆成可修改的具体规则。</li><li>适合服务作品集文案、汇报页和 Skill 输出润色。</li></ul><div><span class="tag">知识库</span><div class="actions"><a class="button" href="../cases/wiki-humanized-writing.html">案例详情</a></div></div></div>
+      </article>
+
+      <article class="tool">
+        <div><span class="kicker">复盘与回流</span><h2>Loop 知识库</h2><span class="big">Bad-case Loop</span><p class="claim">专门存放 bad-case、复盘、归因和回流动作，让问题不只停留在一次性修复。</p></div>
+        <div class="detail"><ul class="points"><li>按问题、原因、修复动作和复用规则组织记录。</li><li>把评测、Prompt、Skill 里的失败样例沉淀成资产。</li><li>支持后续进入规则库、测试集和产品改进。</li></ul><div><span class="tag">知识沉淀</span><div class="actions"><a class="button" href="../cases/wiki-loop.html">案例详情</a></div></div></div>
+      </article>
+
+      <article class="tool">
+        <div><span class="kicker">模型工具调用</span><h2>Qwen3-4B 工具路由微调</h2><span class="big">Router Tune</span><p class="claim">围绕小模型工具路由，搭建数据 schema、训练链路和评估口径。</p></div>
+        <div class="detail"><ul class="points"><li>定义工具调用 schema 和训练样本格式。</li><li>梳理 baseline、微调后评估和成本耗时记录。</li><li>链路已通，最终数据仍需要补完整。</li></ul><div><span class="tag amber">链路探索</span><div class="actions"><a class="button" href="../cases/qwen-router-tuning.html">案例详情</a></div></div></div>
+      </article>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

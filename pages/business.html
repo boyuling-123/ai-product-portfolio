@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>业务项目 - AI 作品集</title>
+  <style>
+    :root{--bg:#fafafa;--surface:#fff;--ink:#0a0a0a;--muted:#667085;--line:#e2e6ee;--accent:#2563eb;--soft:#f4f7fb;--accent-soft:#edf4ff;--shadow:0 18px 48px rgba(15,23,42,.08);--green:#087f5b;--amber:#b45309}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}.nav{position:sticky;top:0;background:rgba(250,250,250,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);z-index:10}.nav-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:16px}.nav a{padding:7px 10px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:13px;font-weight:800}.nav a:hover{background:var(--accent-soft);color:var(--accent)}main{max-width:1180px;margin:0 auto;padding:34px 24px 76px}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:30px;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{padding:24px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:48px;line-height:1.08;margin:8px 0 14px}h2{font-size:28px;line-height:1.12;margin:0 0 10px}.muted{color:var(--muted)}.big{display:block;margin:10px 0 14px;color:#0f172a;font-size:42px;line-height:.96;font-weight:950}.slot{min-height:112px;padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft);color:#344054;font-weight:760}.points{display:grid;gap:8px;margin:14px 0 0;padding:0;list-style:none}.points li{padding-left:14px;position:relative;color:#344054;font-size:14px;font-weight:760}.points li::before{content:"";position:absolute;left:0;top:.78em;width:5px;height:5px;border-radius:50%;background:var(--accent)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}.tag{display:inline-flex;padding:3px 9px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.tag.green{background:#ecfdf3;color:var(--green)}.tag.amber{background:#fffbeb;color:var(--amber)}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.button{display:inline-flex;min-height:40px;align-items:center;justify-content:center;padding:8px 14px;border:1px solid var(--line);border-radius:9px;background:#fff;text-decoration:none;color:#344054;font-size:13px;font-weight:850}.primary{background:var(--accent);border-color:var(--accent);color:#fff}@media(max-width:850px){.grid{grid-template-columns:1fr}.nav-inner{flex-direction:column}h1{font-size:36px}.big{font-size:34px}.card{min-height:auto}}
+  </style>
+</head>
+<body>
+  <header class="nav"><div class="nav-inner"><strong>Lu · AI 作品集</strong><nav><a href="../index.html">首页</a><a href="tools.html">自驱工具</a><a href="skills.html">Skill</a><a href="business.html">业务项目</a><a href="about.html">关于我</a></nav></div></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Business Projects</p>
+      <h1>业务项目：从 AI 能力到真实生产链路</h1>
+      <p class="muted">这一页放我在阿里国际 AI 设计中台相关工作中的业务项目。展示重点不是公司业务细节，而是我如何把模型、Tool、Skill、Agent、评测和工程协同组织成可落地的产品方案。</p>
+    </section>
+    <section class="grid">
+      <article class="card">
+        <div>
+          <div class="tags"><span class="tag green">电商图片</span><span class="tag">图像处理</span><span class="tag amber">测评闭环</span></div>
+          <h2>Brand+ 电商图片处理平台</h2>
+          <span class="big">图片生产链路</span>
+          <p class="muted">面向白底主图、图片翻译、详情页多语种、卖点图和主图套图，把底层 AI 图像能力包装成业务可调用的标准化工具。</p>
+          <ul class="points">
+            <li>设计白底图检测、抠图生成、二次编辑和质量评分链路。</li>
+            <li>拆解图片内容检测、图翻、多语言诊断、AI 排版和协议转换。</li>
+            <li>沉淀能力矩阵、批量测评、bad-case 回流和 Skill 化复用方式。</li>
+          </ul>
+        </div>
+        <div class="actions"><a class="button primary" href="../cases/brand-plus.html">案例详情</a><a class="button" href="../prds/brand-plus-image-capability.html">PRD 摘要</a></div>
+      </article>
+      <article class="card">
+        <div>
+          <div class="tags"><span class="tag green">AI 视频</span><span class="tag">工作台</span><span class="tag amber">人工可控</span></div>
+          <h2>PPC 视频生成工作台</h2>
+          <span class="big">脚本到剪辑</span>
+          <p class="muted">围绕商品短视频，把商品输入、脚本、分镜、素材、视频片段、剪辑合成、保存导出拆成可编辑、可重跑、可验收的工作台链路。</p>
+          <ul class="points">
+            <li>梳理商品图、商品链接、目标语言、视频类型、渠道尺寸等入参。</li>
+            <li>设计脚本生成、分镜画布、视频片段画布和全局批量生成动作。</li>
+            <li>补充剪辑 iframe、素材库、自动保存、项目数据和资产沉淀规则。</li>
+          </ul>
+        </div>
+        <div class="actions"><a class="button primary" href="../cases/ppc-video-workbench.html">案例详情</a><a class="button" href="../prds/ppc-video-workbench.html">PRD 摘要</a></div>
+      </article>
+      <article class="card">
+        <div>
+          <div class="tags"><span class="tag green">MCP / Skill</span><span class="tag">平台接入</span><span class="tag amber">能力网关</span></div>
+          <h2>悟空 MCP 对接</h2>
+          <span class="big">能力接入平台</span>
+          <p class="muted">围绕业务 Agent 如何接入超编 / 悟空类平台，梳理 API、MCP、ComfyCloud 工作流、Oneday Agent 和 LangGraph 子 Agent 的接入边界。</p>
+          <ul class="points">
+            <li>定义 Tool / 子 Agent / Skill 的能力层级、入参出参和调用协议。</li>
+            <li>梳理业务身份、资源分配、流量管控、任务监控和失败兜底口径。</li>
+            <li>推动平台从“单点能力接入”变成“可管理、可观测、可复用”的能力底座。</li>
+          </ul>
+        </div>
+        <div class="actions"><a class="button primary" href="../cases/platform-agent.html">案例详情</a></div>
+      </article>
+      <article class="card">
+        <div>
+          <div class="tags"><span class="tag green">Multi-Agent</span><span class="tag">图像生成/编辑</span><span class="tag amber">Human-in-loop</span></div>
+          <h2>堆友 Agent 建设</h2>
+          <span class="big">多 Agent 架构</span>
+          <p class="muted">围绕 AI 设计主聊天框，把图像生成、图像编辑、文本处理、任务规划、状态记忆和结果总结拆成 supervisor + 子 Agent / Tool 的结构。</p>
+          <ul class="points">
+            <li>设计 mainSupervisor、imageSupervisor、TextProcess 和底层工具组。</li>
+            <li>引入 state 记忆、任务完整性检查、用户问询和模型路由策略。</li>
+            <li>结合模型评测知识库，支持多模型接入、选择理由记录和后续优化。</li>
+          </ul>
+        </div>
+        <div class="actions"><a class="button primary" href="../cases/agent-building.html">案例详情</a><a class="button" href="../prds/agent-product-framework.html">框架摘要</a></div>
+      </article>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

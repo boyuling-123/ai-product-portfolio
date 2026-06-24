@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand+ 电商图片处理平台 - 案例详情</title>
+  <style>
+    :root{--bg:#fafafa;--surface:#fff;--ink:#0a0a0a;--muted:#667085;--line:#e2e6ee;--accent:#2563eb;--soft:#f4f7fb;--green:#087f5b;--amber:#b45309;--shadow:0 18px 48px rgba(15,23,42,.08)}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}main{max-width:1040px;margin:0 auto;padding:42px 24px 70px}a{color:var(--accent);font-weight:800}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:30px}.card{padding:20px;margin-top:16px}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:42px;line-height:1.1;margin:8px 0 12px}h2{margin:24px 0 10px}.muted{color:var(--muted)}img{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.caption{margin:8px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.mini h3{margin:0 0 6px;font-size:16px}.mini p{margin:0;color:#344054}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{padding:3px 9px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.tag.green{background:#ecfdf3;color:var(--green)}.tag.amber{background:#fffbeb;color:var(--amber)}li{margin:6px 0}@media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
+  </style>
+  <link rel="stylesheet" href="../assets/highlights.css">
+</head>
+<body>
+  <main>
+    <a href="../pages/business.html">返回业务项目</a>
+    <section class="hero">
+      <p class="eyebrow">Business Case</p>
+      <h1>Brand+ 电商图片处理平台</h1>
+      <p class="muted">面向电商业务的内部图片处理平台，由 AI 设计中台提供底层 AI 能力支持。我负责把白底图、图片翻译、详情页多语种和卖点图等场景拆成可调用、可测评、可复用的产品能力。</p>
+      <div class="tags"><span class="tag green">电商图片</span><span class="tag">白底图 / 图翻 / 详情页</span><span class="tag amber">测评闭环</span></div>
+    </section>
+    <section class="card">
+      <h2>项目描述</h2>
+      <p>Brand+ 的关键问题不是“有没有模型”，而是底层图像能力如何稳定进入真实电商生产链路。项目需要同时处理业务输入、工具唤起、生成结果、二次编辑、质量评估、历史任务和结果回传，最终支撑白底主图、多语言图片翻译、详情页处理、主图套图和卖点图等核心场景。</p>
+      <div class="grid">
+        <figure>
+          <img src="../assets/evidence/handwritten/brand-plus-01.png" alt="Brand+ 脱敏链路图">
+          <figcaption class="caption">脱敏链路图：从业务输入、能力调用到结果回传。</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/evidence/handwritten/brand-plus-02.png" alt="Brand+ 能力矩阵">
+          <figcaption class="caption">能力矩阵：覆盖检测、生成、翻译、排版、编辑和评测。</figcaption>
+        </figure>
+      </div>
+      <h2>需求与设计</h2>
+      <ul>
+        <li>白底图：设计图片上传、参数预填、白底图检测、通用抠图、背景色/尺寸设置、结果展示和继续编辑链路。业务唤起 iframe 时，可携带图片 URL、抠图参数和自动执行状态。</li>
+        <li>图片翻译：拆解图片内容检测、语种判断、OCR / mask、图片消除、多语言翻译、内容诊断、AI 排版和协议转换，支持原语言与目标语言不同的翻译链路。</li>
+        <li>详情页 / 卖点图：设计商品主图、已有详情图、PC / Mobile 详情图、卖点选择、参数补充、多语言生成和结果回传方式，把生成结果以画板形式进入编辑器。</li>
+        <li>二次编辑：在超编底层能力上叠加业务定制功能，支持手动抠图、拼图、预设样式、配件图上传、图片优化和保存回传。</li>
+      </ul>
+      <h2>技术与执行</h2>
+      <div class="grid">
+        <article class="mini"><h3>能力封装</h3><p>将白底图检测、抠图、图翻、详情页生成等能力拆成清晰输入输出，便于业务平台通过 iframe / API 接入。</p></article>
+        <article class="mini"><h3>测评体系</h3><p>围绕白底图、图翻、详情页等场景建立批量测试口径，覆盖生成质量、翻译质量、处理耗时和 bad-case。</p></article>
+        <article class="mini"><h3>协议链路</h3><p>梳理图翻 JSON 协议、HTML 协议、超编协议之间的转换关系，保证生成结果可继续编辑。</p></article>
+        <article class="mini"><h3>Skill 化复用</h3><p>把套图、详情页、PRD、会议纪要等能力沉淀为可复用 Skill，方便后续跨场景调用。</p></article>
+      </div>
+      <h2>项目管理与优化</h2>
+      <ul>
+        <li>对接业务、设计、算法和研发，拆解 P0 / P1 能力范围，明确白底图、图翻、详情页、卖点图等能力的开发优先级。</li>
+        <li>结合简历中的项目口径，累计支撑 1000W+ 图片处理量；抠图准确率达 97%，多语言翻译优质率达 96%。</li>
+        <li>将一次性模型调试经验沉淀为评测规则、Prompt、bad-case 和能力文档，降低后续能力接入成本。</li>
+      </ul>
+      <p><a href="../prds/brand-plus-image-capability.html">查看脱敏 PRD 摘要</a></p>
+    </section>
+  </main>
+  <script src="../assets/editor.js"></script>
+</body>
+</html>

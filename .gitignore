@@ -1,0 +1,6 @@
+node_modules/
+dist/
+assets/screenshots/
+.DS_Store
+npm-debug.log*
+*.tmp

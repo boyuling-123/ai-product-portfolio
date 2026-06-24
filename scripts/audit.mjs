@@ -146,10 +146,7 @@ async function main() {
 
   const anchors = desktop.metrics.anchors;
   const localLinks = anchors.filter(item => item.href.startsWith(url));
-  const externalLinks = anchors.filter(item => {
-    if (item.href.startsWith(url)) return false;
-    return !/^(mailto:|tel:)/.test(item.href);
-  });
+  const externalLinks = anchors.filter(item => !item.href.startsWith(url));
   const crawl = await crawlInternalLinks(url);
   const badLocal = crawl.bad;
   const uncheckedExternal = externalLinks.filter(item => !knownExternalHosts.has(new URL(item.href).hostname));

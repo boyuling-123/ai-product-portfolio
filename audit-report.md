@@ -1,8 +1,8 @@
 # Portfolio Audit Report
 
-- 审计时间：2026-06-24T16:24:17.237Z
+- 审计时间：2026-06-24T14:41:03.490Z
 - 审计地址：http://127.0.0.1:9010/
-- 内部页面数：1
+- 内部页面数：31
 - 截图输出：assets/screenshots/portfolio-mobile.png, portfolio-tablet.png, portfolio-desktop.png
 
 ## 结果
@@ -13,8 +13,8 @@
 - ✅ 移动端无横向滚动：375px / 375px
 - ✅ 平板布局正常：768px / 768px
 - ✅ 桌面布局正常：1440px / 1440px
-- ✅ 首屏加载小于 3 秒：997ms
-- ✅ 首页为封面结构：{"homeCards":0,"forbiddenHomeLabels":0,"primaryLinks":7}
+- ✅ 首屏加载小于 3 秒：509ms
+- ✅ 首页为封面结构：{"homeCards":0,"forbiddenHomeLabels":0,"primaryLinks":8}
 - ✅ 多页面结构已建立：pages=4, cases=21
 - ✅ 无明显临时占位词：hits=0/0/0
 - ✅ 交互控件有文本或 aria：empty=0
@@ -31,9 +31,9 @@
 
 ## 视口结果
 
-- mobile 375x812：HTTP 200，load 1270ms，scroll 375/375，images 0
-- tablet 768x1024：HTTP 200，load 1028ms，scroll 768/768，images 0
-- desktop 1440x900：HTTP 200，load 997ms，scroll 1440/1440，images 0
+- mobile 375x812：HTTP 200，load 552ms，scroll 375/375，images 0
+- tablet 768x1024：HTTP 200，load 508ms，scroll 768/768，images 0
+- desktop 1440x900：HTTP 200，load 509ms，scroll 1440/1440，images 0
 
 ## 待处理问题
 

@@ -9,6 +9,9 @@
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7}main{max-width:1040px;margin:0 auto;padding:42px 24px 70px}a{color:var(--accent);font-weight:800}.hero,.card{background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.hero{padding:30px}.card{padding:20px;margin-top:16px}.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:42px;line-height:1.1;margin:8px 0 12px}h2{margin:24px 0 10px}.muted{color:var(--muted)}img{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.caption{margin:8px 0 0;color:var(--muted);font-size:13px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{padding:3px 9px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.tag.green{background:#ecfdf3;color:var(--green)}.tag.amber{background:#fffbeb;color:var(--amber)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.mini-card{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.mini-card h3{margin:0 0 6px;font-size:16px}.mini-card p{margin:0;color:var(--muted)}li{margin:6px 0}@media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
   </style>
   <link rel="stylesheet" href="../assets/highlights.css">
+  <style>
+    .prd-library{margin-top:18px}.prd-note{margin:0 0 12px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--soft);color:#344054;font-size:14px}.prd-doc{border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:12px;overflow:hidden}.prd-doc summary{cursor:pointer;padding:16px 18px;font-weight:900;color:#0f172a;background:#f8fafc}.prd-doc summary::-webkit-details-marker{display:none}.prd-body{padding:4px 18px 18px}.prd-body h3{font-size:18px;margin:18px 0 8px}.prd-body h4{font-size:15px;margin:14px 0 6px;color:#0f172a}.prd-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.prd-box{padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--soft)}.prd-box h4{margin-top:0}.prd-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.prd-meta span{padding:3px 8px;border-radius:999px;background:#edf4ff;color:var(--accent);font-size:12px;font-weight:850}.prd-body li{margin:5px 0}@media(max-width:800px){.prd-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <main>
@@ -49,8 +52,151 @@
         <li>为后续模型路由、bad-case 回流和 Agent 效果优化打基础，也能反哺 AI 测评平台的评估维度与样本沉淀。</li>
       </ul>
       <p><a href="../prds/agent-product-framework.html">查看 Agent 框架摘要</a></p>
+      <h2>脱敏 PRD 子页</h2>
+      <div class="prd-library">
+        <p class="prd-note">以下内容由 Agent 方向 PRD 脱敏整理，去除了内部链接、真实项目代号、人员、花名和排期责任人，保留 Agent 产品架构、能力地图、节点流程、记忆、模型路由和可复用组件设计。</p>
+        <details class="prd-doc">
+          <summary>AI 设计 Agent 4.0 方案</summary>
+          <div class="prd-body">
+            <div class="prd-meta"><span>多 Agent</span><span>记忆模块</span><span>模型路由</span><span>图像生成/编辑</span></div>
+            <h3>优化目标</h3>
+            <ul>
+              <li>支持多个并行任务的结果输出，并将生图过程参数、快速修改配方和任务结果关联起来。</li>
+              <li>增加历史记录、多轮交互、联网检索、上下文记忆和固定调用顺序。</li>
+              <li>同一功能下接入多个生成/编辑模型，基于模型评测知识库进行自动匹配或路由。</li>
+              <li>用多 Agent 框架把海报生成、图像生成、图像编辑、文本处理等能力拆开。</li>
+            </ul>
+            <h3>两类工作模式</h3>
+            <div class="prd-grid">
+              <article class="prd-box"><h4>Supervisor 模式</h4><p>适合开放性高的任务。上层 supervisor 负责意图理解、任务规划、Agent 调用和结果整理；子 Agent / tools 只负责具体执行，并与 supervisor 通信。</p></article>
+              <article class="prd-box"><h4>Custom Workflow 模式</h4><p>适合部分确定性的复杂任务。提前定义子 Agent 通信顺序，子 Agent 可相互通信，也可在关键节点直接与用户交互。</p></article>
+            </div>
+            <h3>配套组件</h3>
+            <ul>
+              <li>Host：LLM，负责任务规划、决策和生成响应。</li>
+              <li>Tools：API / MCP / 工作流能力，用于生成、编辑、搜索等动作。</li>
+              <li>知识库：提供模型能力、风格、规则和历史经验。</li>
+              <li>记忆：共享用户输入、需求分析、任务规划、进度、Agent 状态、中间结果和 tool 结果。</li>
+            </ul>
+            <h3>本期功能范围</h3>
+            <ul>
+              <li>将现有 tool 能力改造成子 Agent：海报生成、图像生成、图像编辑、抠图、文本生成/编辑和聊天机器人。</li>
+              <li>在部分子 Agent 中接入多个模型，结合评测知识库选择适合模型。</li>
+              <li>在部分子 Agent 中增加用户选择、确认和追问节点。</li>
+              <li>P1 引入搜索 tool、字体更改、效果调整、内容调整等操作编辑 Agent。</li>
+            </ul>
+          </div>
+        </details>
+        <details class="prd-doc">
+          <summary>Agent 产品建设框架</summary>
+          <div class="prd-body">
+            <div class="prd-meta"><span>能力建设</span><span>Prompt 调试</span><span>电商图像接入</span><span>视频 Agent</span></div>
+            <h3>建设方向</h3>
+            <ul>
+              <li>围绕设计编辑 Agent、电商图像 Agent、视频 Agent 和 Agent 基建建立产品框架。</li>
+              <li>新增问询 tool、对话预测、图片文字提取与 AI 修改、图片分层等能力。</li>
+              <li>优化海报 Agent：扩展长图文类型、优化消除效果、用问询和类型判断决定海报生成流程。</li>
+              <li>协议编辑 Agent 需要支持协议压缩、token 优化、全局排版和图层限制放开。</li>
+            </ul>
+            <h3>电商图像能力接入</h3>
+            <ul>
+              <li>将已有电商图像能力改造成可接入 Agent 平台的 API、MCP 或 Skill。</li>
+              <li>用中台 Agent 应用展示电商图像能力最佳实践。</li>
+              <li>覆盖能力接入、模板推荐、模板选择和业务场景调用。</li>
+            </ul>
+            <h3>Agent 基建</h3>
+            <ul>
+              <li>Prompt 调试工具：支持 Prompt 修改、调试、录入、删除、版本管理和激活状态。</li>
+              <li>业务身份：支持 Agent 版本隔离和业务配置，避免不同业务共用状态。</li>
+              <li>视频 Agent beta：为视频脚本、分镜、剪辑和生成能力预留统一 Agent 入口。</li>
+            </ul>
+          </div>
+        </details>
+        <details class="prd-doc">
+          <summary>Agent 建设方案与多 Agent 架构</summary>
+          <div class="prd-body">
+            <div class="prd-meta"><span>Tool 库</span><span>Agent 网关</span><span>LangGraph</span><span>Human-in-loop</span></div>
+            <h3>Agent 构建框架</h3>
+            <ul>
+              <li>能力建设：建立和维护 tool 库，接入外部 API、内部 API 和设计师自主搭建的工作流。</li>
+              <li>Agent 基建：通过统一 API 网关对外服务，支持业务身份管理、资源分配和任务监控。</li>
+              <li>自研 Agent：适用于强自主可控、复杂工作流编排的项目。</li>
+              <li>自由 Agent：适用于中低复杂度、开放式工作流和快速搭建项目。</li>
+              <li>应用搭建平台：支持 Agent 搭建、测试和试用。</li>
+            </ul>
+            <h3>多 Agent 节点流程</h3>
+            <ul>
+              <li>主体结构为 LLM + 子 Agent / tool，supervisor 进行任务理解和路由。</li>
+              <li>子图包括海报、图片生成、图片编辑等，每个子图执行后合并到 summary 节点。</li>
+              <li>记忆模块记录任务信息、任务规划、任务进度、Agent 状态、tool 入参和每轮结果。</li>
+              <li>当意图不准确或输入不完整时，通过用户干预节点追问，提升任务规划准确度。</li>
+            </ul>
+            <h3>子 Agent / Tool 范围</h3>
+            <ul>
+              <li>P0：文本生成与处理、图像生成与编辑、文生图、单图编辑、多图编辑、抠图。</li>
+              <li>P1：视频生成、海报生成、分层海报、协议编辑、作品编辑、内容编辑。</li>
+              <li>P2：基于开放搭建平台的设计类 Agent 扩展。</li>
+            </ul>
+          </div>
+        </details>
+        <details class="prd-doc">
+          <summary>中台 Agent 能力建设</summary>
+          <div class="prd-body">
+            <div class="prd-meta"><span>能力地图</span><span>Skill + Tool</span><span>视频编辑 Agent</span><span>Runtime</span></div>
+            <h3>能力地图</h3>
+            <ul>
+              <li>电商图像方向引入 Skill，与 tool 共同构建 Agent 能力。</li>
+              <li>能力层负责 tool 封装、已有能力 Skill 化、新能力 Skill 构建。</li>
+              <li>Agent 架构层支持 Skill 载入、tool 分层管理、Prompt 管理与调试。</li>
+              <li>主 Agent 将电商图像能力融入现有对话和任务流。</li>
+            </ul>
+            <h3>视频能力建设</h3>
+            <ul>
+              <li>视频编辑 Agent 目标：让 AI 通过代码生成视频描述或视频代码，再渲染到编辑器中。</li>
+              <li>第一阶段实现本地渲染组件编辑器化，打通编辑器交互与协议双向互通。</li>
+              <li>第二阶段基于现有渲染方案扩展自然语言编辑、元素编辑和效果增强。</li>
+              <li>视频 Agent 产品形态：在视频编辑器左侧加入 Agent 对话窗口，并构建视频系统 Prompt 与工具封装。</li>
+            </ul>
+            <h3>核心架构与模块</h3>
+            <ul>
+              <li>能力模块：Skill 载入、tool 分层管理、Prompt 管理与调试。</li>
+              <li>记忆模块：上下文优化、长期信息保留和任务状态复用。</li>
+              <li>中间件：消息规范、通信机制和运行时事件。</li>
+              <li>运行时：双层循环处理用户追问、tool calls 和用户打断；事件系统记录生命周期。</li>
+            </ul>
+          </div>
+        </details>
+        <details class="prd-doc">
+          <summary>设计编辑 Agent 3.0 功能完善</summary>
+          <div class="prd-body">
+            <div class="prd-meta"><span>AI 生图</span><span>多图输入</span><span>上下文理解</span><span>Agent 生成器</span></div>
+            <h3>AI 生图能力</h3>
+            <ul>
+              <li>接入新的生图模型能力，明确优势类型，例如海报生成、风格迁移和高质量设计图生成。</li>
+              <li>新增风格推荐 tool：在提示词优化前，根据知识库中的风格模型描述与示例图选择合适风格。</li>
+              <li>如果无法选择合适风格，则回退到底层通用模型。</li>
+            </ul>
+            <h3>多图输入与上下文</h3>
+            <ul>
+              <li>P0：多图输入 + 单独输出，用于内容融合和图像编辑。</li>
+              <li>P1：多图输入 + 多图输出，用于批量任务。</li>
+              <li>增加 memory 模块，支持上下文关联、任务连续性和多轮理解。</li>
+            </ul>
+            <h3>Tool 工具集</h3>
+            <ul>
+              <li>优化现有 tool 列表，增加艺术字生成、扩图、细节增强、局部重绘等复杂图像处理能力。</li>
+              <li>视频生成作为独立 tool 进入后续 Agent 能力地图。</li>
+            </ul>
+            <h3>Agent 框架与生成器</h3>
+            <ul>
+              <li>将 Agent 框架内的模块抽象成组件，支持自定义搭建、运行和调试。</li>
+              <li>搭建流程包括能力选择、Prompt 配置、工具组合、运行测试和效果调优。</li>
+              <li>运行流程包括用户输入、任务规划、tool 调用、状态更新、结果展示和复盘。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
     </section>
   </main>
-  <script src="../assets/editor.js"></script>
 </body>
 </html>
